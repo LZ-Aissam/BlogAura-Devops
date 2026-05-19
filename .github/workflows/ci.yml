@@ -30,7 +30,8 @@ jobs:
           pip install itsdangerous mysql-connector-python pytest
 
       - name: Show CI marker
-        run: echo "SMOKE TEST: GitHub Actions a bien lancé le workflow"
+        run: |
+          echo "SMOKE TEST: GitHub Actions a bien lance le workflow"
 
       - name: Run pytest
         run: pytest -q
