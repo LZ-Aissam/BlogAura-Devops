@@ -2,12 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 
-from db import connect_db
-from routers.auth import router as auth_router
-from routers.users import router as users_router
-from routers.posts import router as posts_router
-from routers.comment import router as comment_router
-from routers.react import router as react_router
+from .db import connect_db
+from .routers.auth import router as auth_router
+from .routers.users import router as users_router
+from .routers.posts import router as posts_router
+from .routers.comment import router as comment_router
+from .routers.react import router as react_router
 
 app = FastAPI() 
 
@@ -31,7 +31,11 @@ def LogOutUser():
 # routes
 @app.get("/")
 def read_root():
-    return {"message": "API is running", "db_status": "connected" if connect_db() else "not connected", "version": "26.15.02"}
+    try:
+        db_connected = connect_db() is not None
+    except Exception:
+        db_connected = False
+    return {"message": "API is running", "db_status": "connected" if db_connected else "not connected", "version": "26.15.02"}
 app.include_router(auth_router, prefix="/auth") #routes pour l'authentification
 app.include_router(users_router, prefix="/users") #routes pour les utilisateurs (CRUD)
 app.include_router(posts_router, prefix="/posts") #routes pour les posts (CRUD)

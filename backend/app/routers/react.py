@@ -1,6 +1,6 @@
-from db import connect_db 
+from ..db import connect_db 
 from fastapi import APIRouter, HTTPException, Request 
-from models import ReactCreate
+from ..models import ReactCreate
 
 router = APIRouter()
 

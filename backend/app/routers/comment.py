@@ -1,6 +1,6 @@
-from db import connect_db 
+from ..db import connect_db 
 from fastapi import APIRouter, HTTPException, Request 
-from models import CommentCreate
+from ..models import CommentCreate
 
 router = APIRouter() 
 def get_comments_by_post_id(post_id: int): 

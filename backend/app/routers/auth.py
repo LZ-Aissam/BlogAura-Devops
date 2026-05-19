@@ -1,7 +1,7 @@
 from urllib import request
 from fastapi import APIRouter, FastAPI, HTTPException, Request, Request 
-from models import LoginPayload
-from db import connect_db
+from ..models import LoginPayload
+from ..db import connect_db
 
 router = APIRouter()
 
