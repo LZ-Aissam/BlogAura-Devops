@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BlogAura
 
 Application de blog moderne développée avec React et Tailwind CSS.
@@ -40,3 +41,6 @@ Ouvrir http://localhost:5173
 ## Documentation
 
 Voir le fichier `Documentation_Frontend_BlogAura.md` pour la documentation complète.
+=======
+# BlogAura-Devops
+>>>>>>> 36c1d55c42b0b43374b30e62f26178e84a5b0b31
